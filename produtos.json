@@ -181,6 +181,15 @@
       "promoPrice": 13.9,
       "img": "https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&q=80&w=400",
       "tag": "Direto da Granja"
+    },
+    {
+      "id": 1792100494030,
+      "name": "Pimentao",
+      "category": "frutas",
+      "unit": "Unidade",
+      "price": 12,
+      "promo": false,
+      "img": "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=600"
     }
   ]
 }

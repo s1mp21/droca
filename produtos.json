@@ -125,17 +125,6 @@
       "tag": "Promoção"
     },
     {
-      "id": 15,
-      "name": "Alface Crespa Hidropônica",
-      "category": "verduras",
-      "price": 3.5,
-      "unit": "Maço",
-      "promo": true,
-      "promoPrice": 2.5,
-      "img": "https://images.unsplash.com/photo-1622484211148-716598e0db01?auto=format&fit=crop&q=80&w=400",
-      "tag": "Fresco do Dia"
-    },
-    {
       "id": 16,
       "name": "Couve Manteiga Picada",
       "category": "verduras",

@@ -125,15 +125,6 @@
       "tag": "Promoção"
     },
     {
-      "id": 14,
-      "name": "Pimentão Verde Graúdo",
-      "category": "legumes",
-      "price": 6.8,
-      "unit": "Kg",
-      "promo": false,
-      "img": "https://images.unsplash.com/photo-1563565312871-7009476b32df?auto=format&fit=crop&q=80&w=400"
-    },
-    {
       "id": 15,
       "name": "Alface Crespa Hidropônica",
       "category": "verduras",

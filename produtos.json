@@ -1,0 +1,186 @@
+{
+  "status": {
+    "open": false,
+    "text": "• Abre segunda-feira às 08:00"
+  },
+  "products": [
+    {
+      "id": 1,
+      "name": "Morango Premium",
+      "category": "frutas",
+      "price": 8.5,
+      "unit": "Bandeja 250g",
+      "promo": true,
+      "promoPrice": 6.3,
+      "img": "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&q=80&w=400",
+      "tag": "25% OFF"
+    },
+    {
+      "id": 2,
+      "name": "Banana Prata Da Roça",
+      "category": "frutas",
+      "price": 5.9,
+      "unit": "Kg",
+      "promo": false,
+      "img": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      "id": 3,
+      "name": "Melancia Inteira Doce",
+      "category": "frutas",
+      "price": 18,
+      "unit": "Unidade",
+      "promo": true,
+      "promoPrice": 14.5,
+      "img": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&q=80&w=400",
+      "tag": "Super Desconto"
+    },
+    {
+      "id": 4,
+      "name": "Maçã Gala Selecionada",
+      "category": "frutas",
+      "price": 9.8,
+      "unit": "Kg",
+      "promo": false,
+      "img": "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      "id": 5,
+      "name": "Mamão Formosa Doce",
+      "category": "frutas",
+      "price": 7.5,
+      "unit": "Kg",
+      "promo": false,
+      "img": "https://images.unsplash.com/photo-1614088685112-0a760b71a3c8?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      "id": 6,
+      "name": "Uva Sem Semente Vitória",
+      "category": "frutas",
+      "price": 12,
+      "unit": "Bandeja 500g",
+      "promo": true,
+      "promoPrice": 9.9,
+      "img": "https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&q=80&w=400",
+      "tag": "Oferta"
+    },
+    {
+      "id": 7,
+      "name": "Laranja Pera Suco",
+      "category": "frutas",
+      "price": 4.8,
+      "unit": "Kg",
+      "promo": false,
+      "img": "https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      "id": 8,
+      "name": "Abacaxi Pérola Maduro",
+      "category": "frutas",
+      "price": 7.9,
+      "unit": "Unidade",
+      "promo": true,
+      "promoPrice": 5.99,
+      "img": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&q=80&w=400",
+      "tag": "Leve Mais por Menos"
+    },
+    {
+      "id": 9,
+      "name": "Tomate Italiano Maduro",
+      "category": "legumes",
+      "price": 8.9,
+      "unit": "Kg",
+      "promo": true,
+      "promoPrice": 6.5,
+      "img": "https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&q=80&w=400",
+      "tag": "Leve 3 Pague 2"
+    },
+    {
+      "id": 10,
+      "name": "Cenoura Orgânica Extra",
+      "category": "legumes",
+      "price": 5.5,
+      "unit": "Kg",
+      "promo": false,
+      "img": "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      "id": 11,
+      "name": "Batata Lavada Especial",
+      "category": "legumes",
+      "price": 6.8,
+      "unit": "Kg",
+      "promo": false,
+      "img": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      "id": 12,
+      "name": "Abóbora Menina",
+      "category": "legumes",
+      "price": 4.5,
+      "unit": "Kg",
+      "promo": true,
+      "promoPrice": 3.49,
+      "img": "https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&q=80&w=400",
+      "tag": "Promoção"
+    },
+    {
+      "id": 13,
+      "name": "Abobrinha Italiana",
+      "category": "legumes",
+      "price": 5.9,
+      "unit": "Kg",
+      "promo": false,
+      "img": "https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      "id": 14,
+      "name": "Pimentão Verde Graúdo",
+      "category": "legumes",
+      "price": 6.8,
+      "unit": "Kg",
+      "promo": false,
+      "img": "https://images.unsplash.com/photo-1563565312871-7009476b32df?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      "id": 15,
+      "name": "Alface Crespa Hidropônica",
+      "category": "verduras",
+      "price": 3.5,
+      "unit": "Maço",
+      "promo": true,
+      "promoPrice": 2.5,
+      "img": "https://images.unsplash.com/photo-1622484211148-716598e0db01?auto=format&fit=crop&q=80&w=400",
+      "tag": "Fresco do Dia"
+    },
+    {
+      "id": 16,
+      "name": "Couve Manteiga Picada",
+      "category": "verduras",
+      "price": 4,
+      "unit": "Maço",
+      "promo": false,
+      "img": "https://images.unsplash.com/photo-1606588591787-8df7dca7140a?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      "id": 17,
+      "name": "Brócolis Americano",
+      "category": "verduras",
+      "price": 8.5,
+      "unit": "Unidade",
+      "promo": false,
+      "img": "https://images.unsplash.com/photo-1584270354949-c26b0d5b4a0c?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      "id": 18,
+      "name": "Ovos Caipira Legítimos",
+      "category": "verduras",
+      "price": 16,
+      "unit": "Dúzia",
+      "promo": true,
+      "promoPrice": 13.9,
+      "img": "https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&q=80&w=400",
+      "tag": "Direto da Granja"
+    }
+  ]
+}

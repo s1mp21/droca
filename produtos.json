@@ -125,15 +125,6 @@
       "tag": "Promoção"
     },
     {
-      "id": 16,
-      "name": "Couve Manteiga Picada",
-      "category": "verduras",
-      "price": 4,
-      "unit": "Maço",
-      "promo": false,
-      "img": "https://images.unsplash.com/photo-1606588591787-8df7dca7140a?auto=format&fit=crop&q=80&w=400"
-    },
-    {
       "id": 17,
       "name": "Brócolis Americano",
       "category": "verduras",

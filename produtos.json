@@ -161,6 +161,15 @@
       "price": 10.99,
       "promo": false,
       "img": "https://www.svicente.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw0a9c8b56/Produtos/21890-7898918783015-morango%20bandeja%20250gr-flv-1.jpg"
+    },
+    {
+      "id": 1792113967399,
+      "name": "Alface comum",
+      "category": "verduras",
+      "unit": "Unidade",
+      "price": 2.49,
+      "promo": false,
+      "img": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=400"
     }
   ]
 }

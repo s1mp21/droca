@@ -104,13 +104,13 @@
     },
     {
       "id": 12,
-      "name": "Abóbora Menina",
+      "name": "Abóbora Italiana",
       "category": "legumes",
       "price": 4.5,
       "unit": "Kg",
       "promo": true,
       "promoPrice": 3.49,
-      "img": "https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&q=80&w=400",
+      "img": "https://images.unsplash.com/photo-1563252722-6434563a985d",
       "tag": "Promoção"
     },
     {

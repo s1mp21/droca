@@ -170,6 +170,15 @@
       "price": 12.9,
       "promo": false,
       "img": "https://images.unsplash.com/photo-1585059895524-72359e06133a"
+    },
+    {
+      "id": 1792111512386,
+      "name": "KIWI",
+      "category": "frutas",
+      "unit": "Unidade",
+      "price": 12.9,
+      "promo": false,
+      "img": "https://images.unsplash.com/photo-1585059895524-72359e06133a"
     }
   ]
 }

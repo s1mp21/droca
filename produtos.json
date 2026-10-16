@@ -55,9 +55,9 @@
     },
     {
       "id": 7,
-      "name": "Laranja Pera Suco",
+      "name": "Laranja Pera",
       "category": "frutas",
-      "price": 10.77,
+      "price": 3.99,
       "unit": "Kg",
       "promo": false,
       "img": "https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&q=80&w=400"

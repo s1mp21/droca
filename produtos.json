@@ -26,14 +26,14 @@
     },
     {
       "id": 3,
-      "name": "Melancia Inteira Doce",
+      "name": "Melancia Inteira / Pedaço",
       "category": "frutas",
-      "price": 18,
+      "price": 5.29,
       "unit": "Unidade",
       "promo": true,
-      "promoPrice": 14.5,
+      "promoPrice": 3.99,
       "img": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&q=80&w=400",
-      "tag": "Super Desconto"
+      "tag": "Oferta Terça e Quarta"
     },
     {
       "id": 4,

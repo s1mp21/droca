@@ -161,15 +161,6 @@
       "price": 5.7,
       "promo": false,
       "img": "https://images.unsplash.com/photo-1518635017498-87f514b751ba?q=80&w=800&auto=format&fit=crop"
-    },
-    {
-      "id": 1792113530326,
-      "name": "Batata Lavada Grauda",
-      "category": "legumes",
-      "unit": "Kg",
-      "price": 8.99,
-      "promo": false,
-      "img": "https://images.unsplash.com/photo-1518977676601-b53f82aba655"
     }
   ]
 }

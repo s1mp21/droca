@@ -161,6 +161,15 @@
       "price": 5.7,
       "promo": false,
       "img": "https://www.tendaatacado.com.br/produto/morango-bandeja-250g-741"
+    },
+    {
+      "id": 1792113530326,
+      "name": "Batata Lavada Grauda",
+      "category": "legumes",
+      "unit": "Kg",
+      "price": 8.99,
+      "promo": false,
+      "img": "https://www.google.com/search?tbm=isch&q=batata+lavada+gra%C3%BAda&udm=2"
     }
   ]
 }

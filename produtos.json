@@ -11,9 +11,9 @@
       "price": 10.99,
       "unit": "Bandeja 250g",
       "promo": true,
-      "promoPrice": 8.96,
-      "img": "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&q=80&w=400",
-      "tag": "Oferta"
+      "promoPrice": 3.99,
+      "img": "https://images.unsplash.com/photo-1464965911861-746a04b4bca6",
+      "tag": "3 por dez reais"
     },
     {
       "id": 2,

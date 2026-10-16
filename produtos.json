@@ -154,15 +154,6 @@
       "img": "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=600"
     },
     {
-      "id": 1792111335254,
-      "name": "KIWI",
-      "category": "frutas",
-      "unit": "kg",
-      "price": 15.99,
-      "promo": false,
-      "img": "https://www.zaffari.com.br/kiwi-polpa-verde-1000282/p?srsltid=AU7gw4V1-7ocfqdfbSUhSs6Tr-GeLSEZO9XTgqLVsg7Xj42VYFGXiRkJ"
-    },
-    {
       "id": 1792111511202,
       "name": "KIWI",
       "category": "frutas",

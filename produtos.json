@@ -152,6 +152,15 @@
       "price": 12,
       "promo": false,
       "img": "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=600"
+    },
+    {
+      "id": 1792111335254,
+      "name": "KIWI",
+      "category": "frutas",
+      "unit": "kg",
+      "price": 15.99,
+      "promo": false,
+      "img": "https://www.google.com/imgres?q=fruta%20kiwify&imgurl=https%3A%2F%2Fmacaverdenet.com.br%2Fwp-content%2Fuploads%2F2018%2F12%2FKiwi1.jpg&imgrefurl=https%3A%2F%2Fmacaverdenet.com.br%2Fprodutos%2Ffrutas%2Fkiwi%2F&docid=kYIEyitv501YaM&tbnid=_qd67v_NiqbwIM&vet=12ahUKEwjdteTJpr2XAxUTA7kGHVz1LykQnPAOegUIrgEQAA..i&w=764&h=600&hcb=2&ved=2ahUKEwjdteTJpr2XAxUTA7kGHVz1LykQnPAOegUIrgEQAA"
     }
   ]
 }

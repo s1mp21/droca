@@ -188,6 +188,15 @@
       "price": 2.49,
       "promo": false,
       "img": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=400"
+    },
+    {
+      "id": 1792114085014,
+      "name": "Cheiro Verde",
+      "category": "verduras",
+      "unit": "Unidade",
+      "price": 2.49,
+      "promo": false,
+      "img": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=400"
     }
   ]
 }

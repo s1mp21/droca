@@ -163,15 +163,6 @@
       "img": "https://images.unsplash.com/photo-1585059895524-72359e06133a",
       "promoPrice": 8.99,
       "tag": "Só apenas 10 kg em estoque"
-    },
-    {
-      "id": 1792112581403,
-      "name": "morango",
-      "category": "frutas",
-      "unit": "Unidade",
-      "price": 1.22,
-      "promo": false,
-      "img": "https://images.unsplash.com/photo-1464965911861-746a04b4bca6"
     }
   ]
 }

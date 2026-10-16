@@ -5,17 +5,6 @@
   },
   "products": [
     {
-      "id": 1,
-      "name": "Morango Premium",
-      "category": "frutas",
-      "price": 10.99,
-      "unit": "Bandeja 250g",
-      "promo": true,
-      "promoPrice": 3.99,
-      "img": "https://images.unsplash.com/photo-1464965911861-746a04b4bca6",
-      "tag": "3 por dez reais"
-    },
-    {
       "id": 2,
       "name": "Banana Prata Da Roça",
       "category": "frutas",

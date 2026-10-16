@@ -152,6 +152,15 @@
       "img": "https://images.unsplash.com/photo-1585059895524-72359e06133a",
       "promoPrice": 8.99,
       "tag": "Só apenas 10 kg em estoque"
+    },
+    {
+      "id": 1792112718767,
+      "name": "Morango bandeja",
+      "category": "frutas",
+      "unit": "Unidade",
+      "price": 5.7,
+      "promo": false,
+      "img": "https://www.pexels.com/pt-br/foto/frutas-de-morango-na-bandeja-2260562/?utm_source=chatgpt.com"
     }
   ]
 }

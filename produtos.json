@@ -10,8 +10,10 @@
       "category": "frutas",
       "price": 5.55,
       "unit": "Kg",
-      "promo": false,
-      "img": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&q=80&w=400"
+      "promo": true,
+      "img": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&q=80&w=400",
+      "promoPrice": 2.99,
+      "tag": "Oferta do Dia"
     },
     {
       "id": 3,

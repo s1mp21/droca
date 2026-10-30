@@ -4,21 +4,387 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hortifruti D'Roça - O Verdadeiro Sabor do Campo</title>
+    <meta name="description" content="Frutas, legumes e verduras fresquinhas no Hortifruti D'Roça, na Posse em Petrópolis. Confira o catálogo, veja as ofertas e monte seu pedido pelo WhatsApp.">
+    <meta name="theme-color" content="#07110e">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        document.documentElement.classList.add('js-enabled');
+        const loadingStartedAt = performance.now();
+        let loadingFinished = false;
+        function finishSiteLoading() {
+            if (loadingFinished) return;
+            loadingFinished = true;
+            window.setTimeout(() => {
+                const loader = document.getElementById('site-loader');
+                document.documentElement.classList.add('site-loaded');
+                if (loader) {
+                    loader.classList.add('is-hidden');
+                    window.setTimeout(() => loader.remove(), 700);
+                }
+            }, Math.max(0, 750 - (performance.now() - loadingStartedAt)));
+        }
+        window.addEventListener('load', finishSiteLoading, { once: true });
+        window.setTimeout(finishSiteLoading, 4500);
+    </script>
     <!-- Tailwind CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Animate.css para animações robustas de entrada -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
-        
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
+            background:
+                radial-gradient(ellipse at 82% 4%, rgba(16, 185, 129, .13), transparent 34rem),
+                radial-gradient(ellipse at 10% 42%, rgba(16, 185, 129, .055), transparent 36rem),
+                linear-gradient(rgba(185, 220, 198, .018) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(185, 220, 198, .018) 1px, transparent 1px),
+                #07110e;
+            background-size: auto, auto, 44px 44px, 44px 44px;
+            background-attachment: fixed;
         }
         .serif-title {
             font-family: 'Playfair Display', serif;
+        }
+
+        :root {
+            color-scheme: dark;
+            --page: #07110e;
+            --surface: #0c1914;
+            --surface-raised: #102019;
+            --line: rgba(209, 250, 229, .1);
+            --muted: #9fb2a7;
+            --mint: #78e6b1;
+        }
+
+        html { background: var(--page); overflow-x: clip; }
+        body { color: #e8f1eb; }
+        body.bg-stone-50 { color: #e8f1eb !important; background: var(--page) !important; }
+        body ::selection { color: #032116; background: #78e6b1; }
+        :focus-visible { outline: 2px solid #78e6b1; outline-offset: 4px; }
+
+        #site-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            display: none;
+            place-items: center;
+            padding: 1.5rem;
+            overflow: hidden;
+            color: #edf7f0;
+            background:
+                radial-gradient(ellipse at 50% 35%, rgba(16,185,129,.2), transparent 28rem),
+                linear-gradient(145deg, #07110e, #0b1c13 55%, #07110e);
+            opacity: 1;
+            visibility: visible;
+            transition: opacity .55s ease, visibility .55s ease;
+        }
+        .js-enabled #site-loader { display: grid; }
+        #site-loader::before, #site-loader::after {
+            position: absolute;
+            width: min(72vw, 34rem);
+            aspect-ratio: 1;
+            border: 1px solid rgba(120,230,177,.08);
+            border-radius: 50%;
+            content: '';
+            pointer-events: none;
+        }
+        #site-loader::after { width: min(54vw, 25rem); border-color: rgba(120,230,177,.06); }
+        #site-loader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        .loader-content { position: relative; z-index: 1; width: min(100%, 22rem); text-align: center; }
+        .loader-mark {
+            display: grid;
+            width: 4.5rem;
+            height: 4.5rem;
+            place-items: center;
+            margin: 0 auto 1.35rem;
+            border: 1px solid rgba(134,239,172,.3);
+            border-radius: 1.5rem;
+            color: #092016;
+            background: linear-gradient(145deg, #a7f3d0, #34d399);
+            box-shadow: 0 12px 40px rgba(16,185,129,.2);
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .loader-kicker { color: #8af0be; font-size: .68rem; font-weight: 800; letter-spacing: .24em; }
+        .loader-title { margin-top: .65rem; font-family: 'Playfair Display', serif; font-size: clamp(1.65rem, 6vw, 2.2rem); font-weight: 700; }
+        .loader-copy { margin-top: .55rem; color: #9fb2a7; font-size: .85rem; }
+        .loader-track { width: 100%; height: 3px; margin-top: 1.8rem; overflow: hidden; border-radius: 99px; background: rgba(209,250,229,.1); }
+        .loader-progress { width: 38%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #34d399, #d1fae5); animation: loader-progress 1.35s ease-in-out infinite; }
+        .site-loaded body { overflow-x: clip; }
+        .site-loaded body > #radio-bar,
+        .site-loaded body > #status-banner,
+        .site-loaded body > header,
+        .site-loaded body > main { animation: page-arrive .65s cubic-bezier(.16,1,.3,1) both; }
+        .site-loaded body > #status-banner { animation-delay: 80ms; }
+        .site-loaded body > header { animation-delay: 140ms; }
+        .site-loaded body > main { animation-delay: 200ms; }
+
+        body .text-stone-900 { color: #f0f7f2 !important; }
+        body .text-stone-800 { color: #dce9e0 !important; }
+        body .text-stone-700 { color: #c7d7cc !important; }
+        body .text-stone-600 { color: #afc1b5 !important; }
+        body .text-stone-500 { color: #93a89b !important; }
+        body .text-stone-400 { color: #7f9588 !important; }
+        body .text-emerald-600, body .text-emerald-700 { color: var(--mint) !important; }
+        body .text-emerald-800, body .text-emerald-900 { color: #d1fae5 !important; }
+        body .bg-white { background-color: var(--surface-raised) !important; }
+        body .bg-stone-50 { background-color: #0b1712 !important; }
+        body .bg-stone-100 { background-color: #14231b !important; }
+        body .border-stone-50, body .border-stone-100,
+        body .border-stone-200, body .border-emerald-100,
+        body .border-emerald-200 { border-color: var(--line) !important; }
+
+        #radio-bar {
+            color: #e8f1eb;
+            background: rgba(7, 17, 14, .94) !important;
+            border-color: var(--line) !important;
+            box-shadow: 0 1px 0 rgba(255,255,255,.025) !important;
+            backdrop-filter: blur(18px);
+        }
+        #radio-bar #radio-label, #radio-bar #radio-marquee { color: #e4f2e9 !important; }
+        #radio-cast { color: #ccebd8; background: #14231b; border-color: var(--line); }
+        #radio-vol { background: linear-gradient(90deg, #34d399 var(--v), #26372e var(--v)); }
+        #radio-vol::-webkit-slider-thumb { background: #e8fff1; border-color: #34d399; }
+        #radio-vol::-moz-range-thumb { background: #e8fff1; border-color: #34d399; }
+        #status-banner {
+            color: #c6d5ca;
+            background: rgba(32, 29, 18, .94) !important;
+            border-color: rgba(251,191,36,.12) !important;
+            animation: status-arrive .6s cubic-bezier(.16,1,.3,1) both;
+        }
+
+        body > header {
+            color: #e8f1eb;
+            background: rgba(8,19,15,.88) !important;
+            border-color: var(--line) !important;
+            box-shadow: 0 12px 30px rgba(0,0,0,.16) !important;
+            backdrop-filter: blur(22px);
+        }
+        body > header .text-stone-900 { color: #f1f8f3 !important; }
+        body > header .text-stone-700, body > header .text-stone-600 { color: #b7c8bd !important; }
+        body > header .bg-stone-100 { color: #dce9e0; background: #14231b !important; }
+        body > header .bg-stone-100:hover { background: #1b3024 !important; }
+        body > header .nav-btn { color: #b7c8bd !important; background: transparent !important; }
+        body > header .nav-btn:hover { color: #e3f7eb !important; background: rgba(255,255,255,.05) !important; }
+        body > header .nav-btn[class*="bg-emerald-50"] { color: var(--mint) !important; background: rgba(52,211,153,.1) !important; }
+        body > header #nav-promocoes[class*="bg-orange-500"] { color: #fff7ed !important; background: #c76a24 !important; }
+        body > header #mobile-menu { background: #0a1712 !important; border-color: var(--line) !important; }
+        body > header #mobile-menu button { color: #dce9e0 !important; }
+        body > header .bg-emerald-600 { color: #062016 !important; background: #6ee7b7 !important; }
+        body > header .bg-emerald-600:hover { background: #a7f3d0 !important; }
+
+        #tab-inicio > div:first-child {
+            background:
+                radial-gradient(ellipse at 72% 45%, rgba(16,185,129,.23), transparent 35rem),
+                linear-gradient(125deg,#07140f 0%,#0c2118 52%,#07120e 100%) !important;
+        }
+        #tab-inicio > div:first-child::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(115deg,transparent 40%,rgba(134,239,172,.035),transparent 70%);
+        }
+        #tab-inicio .hero-photo { animation: intro-rise .9s cubic-bezier(.16,1,.3,1) both; animation-delay: .24s; }
+        #tab-inicio .hero-photo img { animation: image-breathe 14s ease-in-out infinite alternate; }
+        #tab-inicio .hero-photo:hover img { animation-play-state: paused; transform: scale(1.045); }
+        #tab-inicio .hero-glow { animation: glow-drift 9s ease-in-out infinite alternate; }
+        #tab-inicio .hero-sticker { animation: sticker-float 4s ease-in-out infinite; }
+        #tab-inicio .hero-sticker i { animation: sticker-spin 12s linear infinite; }
+        #tab-inicio .hero-photo > div:nth-child(2) {
+            border-color: rgba(209,250,229,.17);
+            box-shadow: 0 30px 90px rgba(0,0,0,.42);
+        }
+        #tab-inicio .hero-photo .rating-float {
+            border: 1px solid rgba(255,255,255,.08);
+            background: rgba(14,28,21,.94) !important;
+            color: #f0f7f2;
+        }
+        #tab-inicio .hero-photo .rating-float small { color: #a5b7aa !important; }
+        #tab-inicio .hero-photo .bg-white {
+            border: 1px solid rgba(255,255,255,.08);
+            background: rgba(14,28,21,.94) !important;
+            color: #f0f7f2;
+        }
+        #tab-inicio .hero-photo .text-stone-500 { color: #a5b7aa !important; }
+        #tab-inicio .hero-sticker { border-color: rgba(255,255,255,.55); box-shadow: 0 12px 35px rgba(0,0,0,.3); }
+        #tab-inicio .bg-white {
+            background: linear-gradient(145deg,rgba(17,34,25,.97),rgba(11,24,18,.97)) !important;
+            border-color: var(--line) !important;
+            box-shadow: 0 24px 70px rgba(0,0,0,.24) !important;
+        }
+        #tab-inicio .bg-emerald-50, #tab-inicio .bg-orange-50, #tab-inicio .bg-amber-50 { background: rgba(52,211,153,.1) !important; }
+        #tab-inicio .text-orange-600, #tab-inicio .text-amber-700 { color: #fbbf72 !important; }
+        #tab-inicio .text-orange-500, #tab-inicio .text-amber-600 { color: #fbbf72 !important; }
+        #tab-inicio .border-t, #tab-inicio .border-x { border-color: var(--line) !important; }
+        #tab-inicio .category-card {
+            border: 1px solid rgba(255,255,255,.09);
+            box-shadow: 0 14px 36px rgba(0,0,0,.24);
+        }
+        #tab-inicio .category-card img { transition: transform .7s cubic-bezier(.16,1,.3,1); }
+        #tab-inicio .category-card:hover { transform: translateY(-5px); box-shadow: 0 24px 48px rgba(0,0,0,.36); }
+        #tab-inicio .category-card:hover img { transform: scale(1.08); }
+        #tab-inicio .text-stone-900 { color: #edf6ef !important; }
+        #tab-inicio .text-stone-500 { color: #a2b3a8 !important; }
+        #tab-inicio .text-emerald-600 { color: #78e6b1 !important; }
+        #tab-inicio .bg-stone-900 { background: #d7fbe5 !important; color: #092016 !important; }
+        #tab-inicio .bg-stone-900:hover { background: #a7f3d0 !important; }
+
+        .journey-section, .closing-cta {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background:
+                radial-gradient(ellipse at 95% 0%,rgba(16,185,129,.12),transparent 26rem),
+                linear-gradient(145deg,#0d1b14,#09140f);
+            box-shadow: 0 28px 80px rgba(0,0,0,.22);
+        }
+        .journey-step {
+            min-height: 100%;
+            padding: 1.5rem;
+            border: 1px solid rgba(209,250,229,.09);
+            border-radius: 1.35rem;
+            background: rgba(255,255,255,.025);
+            transition: transform .3s ease,border-color .3s ease,background .3s ease;
+        }
+        .journey-step:hover { transform: translateY(-5px); border-color: rgba(120,230,177,.28); background: rgba(52,211,153,.055); }
+        .journey-number {
+            display: inline-flex; width: 2.8rem; height: 2.8rem; align-items: center; justify-content: center;
+            margin-bottom: 1.2rem; border: 1px solid rgba(120,230,177,.24); border-radius: 1rem;
+            background: rgba(52,211,153,.11); color: #8af0be; font-size: .8rem; font-weight: 800; letter-spacing: .08em;
+        }
+        .closing-cta {
+            background:
+                radial-gradient(ellipse at 85% 10%,rgba(110,231,183,.22),transparent 26rem),
+                linear-gradient(125deg,#10271a,#0a1711 72%);
+            border-color: rgba(134,239,172,.2);
+        }
+        .closing-cta::after {
+            content: ''; position: absolute; width: 20rem; height: 20rem; right: -9rem; bottom: -13rem;
+            border: 1px solid rgba(134,239,172,.13); border-radius: 50%;
+            box-shadow: 0 0 0 2rem rgba(134,239,172,.025),0 0 0 4rem rgba(134,239,172,.02);
+            pointer-events: none;
+        }
+
+        #tab-produtos, #tab-promocoes, #tab-sobre, #tab-contato { color: #e1ece4; background: transparent; }
+        .tab-content h2, .tab-content h3, .tab-content h4 { color: #eef6f0; }
+        .tab-content p { color: #a6b8ac; }
+        .tab-content .bg-white {
+            background: linear-gradient(145deg,rgba(17,34,25,.98),rgba(11,24,18,.98)) !important;
+            border-color: var(--line) !important; box-shadow: 0 18px 50px rgba(0,0,0,.22);
+        }
+        .tab-content .bg-stone-50 { background: #0b1712 !important; }
+        .tab-content .bg-stone-100 { background: #14231b !important; border-color: var(--line) !important; }
+        .tab-content .border-stone-50, .tab-content .border-stone-100,
+        .tab-content .border-stone-200, .tab-content .border-t { border-color: var(--line) !important; }
+        .tab-content .text-stone-900 { color: #eef6f0 !important; }
+        .tab-content .text-stone-800 { color: #dce9e0 !important; }
+        .tab-content .text-stone-700 { color: #c7d7cc !important; }
+        .tab-content .text-stone-600 { color: #b2c2b7 !important; }
+        .tab-content .text-stone-500 { color: #97ab9e !important; }
+        .tab-content .text-stone-400 { color: #81968a !important; }
+        #tab-produtos .filter-btn:not(.bg-emerald-600) {
+            color: #bacabe !important; border-color: var(--line) !important; background: #101e17 !important;
+        }
+        #tab-produtos .filter-btn:not(.bg-emerald-600):hover { color: #eafff1 !important; background: #172a20 !important; }
+        #tab-produtos .filter-btn.bg-emerald-600 { color: #062016 !important; background: #6ee7b7 !important; }
+        .card-product {
+            background: linear-gradient(155deg,#12221a,#0c1812) !important;
+            border-color: rgba(209,250,229,.09) !important;
+            box-shadow: 0 12px 35px rgba(0,0,0,.18);
+            transition: transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease,border-color .35s ease;
+        }
+        .card-product:hover { transform: translateY(-6px); border-color: rgba(110,231,183,.3) !important; box-shadow: 0 24px 50px rgba(0,0,0,.34); }
+        .card-product .border-stone-50 { border-color: rgba(209,250,229,.09) !important; }
+        .card-product .text-stone-900 { color: #f0f7f2 !important; }
+        .card-product .text-stone-400 { color: #9eb1a4 !important; }
+        .card-product .text-emerald-600 { color: #82eabc !important; }
+        #tab-promocoes > div:first-child {
+            background: radial-gradient(ellipse at 90% 15%,rgba(251,146,60,.18),transparent 25rem),linear-gradient(120deg,#12221a,#0b1712 72%) !important;
+            border: 1px solid rgba(251,191,36,.15); box-shadow: 0 24px 60px rgba(0,0,0,.24) !important;
+        }
+        #tab-contato input, #tab-contato textarea {
+            color: #edf6ef; background: #0c1913; border-color: rgba(209,250,229,.13);
+        }
+        #tab-contato input::placeholder, #tab-contato textarea::placeholder { color: #718579; }
+        #tab-contato input:focus, #tab-contato textarea:focus {
+            border-color: rgba(110,231,183,.65); box-shadow: 0 0 0 3px rgba(52,211,153,.1);
+        }
+        body > footer {
+            color: #9aada1; background: linear-gradient(180deg,#0a1711,#060d0a) !important; border-color: #34d399 !important;
+        }
+        body > footer .border-stone-800 { border-color: rgba(209,250,229,.1) !important; }
+        body > footer .text-stone-400 { color: #9aada1 !important; }
+        body > footer .text-stone-500 { color: #74877b !important; }
+        body > footer .text-white { color: #edf7f0 !important; }
+
+        #adm-panel, #cart-panel {
+            color: #e5efe8; background: #0a1711 !important; border-left: 1px solid var(--line);
+            box-shadow: -24px 0 80px rgba(0,0,0,.46) !important;
+        }
+        #adm-panel .bg-white, #cart-panel .bg-white { background: #122119 !important; border-color: var(--line) !important; }
+        #adm-panel .bg-stone-50, #cart-panel .bg-stone-50 { background: #0a1711 !important; }
+        #adm-panel .bg-stone-100, #cart-panel .bg-stone-100 { background: #18271e !important; }
+        #adm-panel .text-stone-900, #cart-panel .text-stone-900 { color: #eef6f0 !important; }
+        #adm-panel .text-stone-700, #cart-panel .text-stone-700 { color: #c5d5ca !important; }
+        #adm-panel .text-stone-500, #cart-panel .text-stone-500 { color: #9aac9f !important; }
+        #adm-panel .text-stone-400, #cart-panel .text-stone-400 { color: #81968a !important; }
+        #adm-panel .border-stone-100, #cart-panel .border-stone-100 { border-color: var(--line) !important; }
+        #adm-panel .adm-in, #adm-panel input, #adm-panel select, #cart-panel input, #cart-panel textarea {
+            color: #edf6ef; background: #0c1913 !important; border-color: rgba(209,250,229,.13) !important;
+        }
+        #adm-panel .adm-lbl { color: #9aac9f; }
+        #adm-overlay { background: rgba(1,8,5,.7) !important; }
+        #cart-overlay { background: rgba(1,8,5,.76) !important; backdrop-filter: blur(5px); }
+        #cart-toast { color: #effff4; background: #163424; border: 1px solid rgba(110,231,183,.18); }
+        #adm-handle { background: rgba(120,230,177,.12); }
+        #adm-handle:hover { background: rgba(16,185,129,.9); }
+
+        .button-shine { position: relative; isolation: isolate; overflow: hidden; }
+        .button-shine::after {
+            content: ''; position: absolute; inset: -60% auto -60% -45%; width: 35%;
+            transform: translateX(-180%) rotate(18deg);
+            background: linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+            transition: transform .7s ease; z-index: 1; pointer-events: none;
+        }
+        .button-shine:hover::after { transform: translateX(520%) rotate(18deg); }
+        .reveal-on-scroll { opacity: 0; transform: translateY(24px) scale(.985); transition: opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1); }
+        .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+        .reveal-on-scroll:nth-child(2) { transition-delay: 70ms; }
+        .reveal-on-scroll:nth-child(3) { transition-delay: 140ms; }
+        .reveal-on-scroll:nth-child(4) { transition-delay: 210ms; }
+        .tab-enter { animation: tab-enter .5s cubic-bezier(.16,1,.3,1) both; }
+        .intro-item { animation: intro-rise .8s cubic-bezier(.16,1,.3,1) both; }
+        .intro-delay-1 { animation-delay: .12s; }
+        .intro-delay-2 { animation-delay: .24s; }
+        .intro-delay-3 { animation-delay: .36s; }
+        .intro-delay-4 { animation-delay: .48s; }
+
+        @keyframes intro-rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes tab-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes image-breathe { from { transform: scale(1); } to { transform: scale(1.07); } }
+        @keyframes glow-drift { from { transform: translate3d(-12px,8px,0) scale(.94); } to { transform: translate3d(14px,-10px,0) scale(1.08); } }
+        @keyframes sticker-float { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-7px) rotate(2deg); } }
+        @keyframes sticker-spin { to { transform: rotate(360deg); } }
+        @keyframes status-arrive { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes page-arrive { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes loader-progress { 0% { transform: translateX(-120%); } 100% { transform: translateX(310%); } }
+
+        @media (max-width: 640px) {
+            #radio-bar { height: 3.75rem; }
+            #radio-bar > div { gap: .55rem; }
+            #radio-btn { width: 2.65rem; height: 2.65rem; }
+            .journey-section, .closing-cta { border-radius: 1.4rem; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+            .intro-item { animation: none !important; opacity: 1; transform: none; }
+            .reveal-on-scroll { opacity: 1; transform: none; }
+            .loader-progress { animation: none; width: 100%; }
         }
         
         /* Custom scrollbar */
@@ -26,10 +392,10 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f5f9;
+            background: #0b1712;
         }
         ::-webkit-scrollbar-thumb {
-            background: #10b981;
+            background: #247b57;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
@@ -55,6 +421,15 @@
     </style>
 </head>
 <body class="bg-stone-50 text-stone-800 antialiased overflow-x-hidden">
+    <div id="site-loader" role="status" aria-live="polite" aria-label="Carregando o site">
+        <div class="loader-content">
+            <div class="loader-mark" aria-hidden="true">D</div>
+            <p class="loader-kicker">HORTIFRUTI D'ROÇA</p>
+            <h1 class="loader-title">O frescor do campo está chegando</h1>
+            <p class="loader-copy">Estamos preparando tudo para você.</p>
+            <div class="loader-track" aria-hidden="true"><div class="loader-progress"></div></div>
+        </div>
+    </div>
 
     <!-- Barra do Player da Rádio -->
     <div id="radio-bar" class="sticky top-0 z-[60] h-16 bg-gradient-to-r from-white via-emerald-50 to-white border-b border-emerald-100 shadow-md shadow-emerald-900/5">
@@ -98,7 +473,7 @@
     </div>
 
     <!-- Top Info / Banner Status -->
-    <div id="status-banner" class="bg-amber-950 text-amber-50 py-2.5 px-4 text-center text-xs sm:text-sm font-medium tracking-wide flex flex-wrap items-center justify-center gap-2 border-b border-amber-900/40 relative z-50 animate__animated animate__fadeInDown">
+    <div id="status-banner" class="bg-amber-950 text-amber-50 py-2.5 px-4 text-center text-xs sm:text-sm font-medium tracking-wide flex flex-wrap items-center justify-center gap-2 border-b border-amber-900/40 relative z-50">
         <span class="inline-flex items-center gap-1.5 bg-red-500/20 text-red-400 px-2 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wider animate-pulse">
             <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> Fechado
         </span>
@@ -148,12 +523,12 @@
         </div>
 
         <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-stone-100 bg-white px-4 py-4 space-y-2 animate__animated animate__fadeIn">
-            <button onclick="showTab('inicio'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-stone-700 hover:bg-stone-50 block">Início</button>
-            <button onclick="showTab('produtos'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-stone-700 hover:bg-stone-50 block">Produtos</button>
-            <button onclick="showTab('promocoes'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-stone-700 hover:bg-stone-50 block flex items-center justify-between">Promoções <span class="bg-orange-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">Ofertas</span></button>
-            <button onclick="showTab('sobre'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-stone-700 hover:bg-stone-50 block">Sobre Nós</button>
-            <button onclick="showTab('contato'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-stone-700 hover:bg-stone-50 block">Contato</button>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-stone-100 bg-white px-4 py-4 space-y-2">
+            <button onclick="showTab('inicio')" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-stone-700 hover:bg-stone-50 block">Início</button>
+            <button onclick="showTab('produtos')" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-stone-700 hover:bg-stone-50 block">Produtos</button>
+            <button onclick="showTab('promocoes')" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-stone-700 hover:bg-stone-50 block flex items-center justify-between">Promoções <span class="bg-orange-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">Ofertas</span></button>
+            <button onclick="showTab('sobre')" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-stone-700 hover:bg-stone-50 block">Sobre Nós</button>
+            <button onclick="showTab('contato')" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-stone-700 hover:bg-stone-50 block">Contato</button>
             <div class="pt-4 border-t border-stone-100 flex flex-col gap-2">
                 <a href="https://wa.me/5524999097508" target="_blank" class="w-full text-center bg-emerald-600 text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2"><i data-lucide="message-circle" class="w-5 h-5"></i> Chamar no WhatsApp</a>
             </div>
@@ -166,29 +541,48 @@
         <!-- SEÇÃO: INÍCIO -->
         <section id="tab-inicio" class="tab-content block">
             <!-- Hero Section -->
-            <div class="relative bg-gradient-to-br from-emerald-900 via-emerald-950 to-stone-950 text-white py-20 lg:py-32 overflow-hidden">
-                <div class="absolute inset-0 opacity-15 mix-blend-overlay bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1200');"></div>
-                <div class="absolute -top-40 -right-40 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"></div>
-                <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
+            <div class="relative bg-gradient-to-br from-emerald-900 via-emerald-950 to-stone-950 text-white py-16 sm:py-20 lg:py-28 overflow-hidden">
+                <div class="absolute inset-0 opacity-[0.08] mix-blend-screen bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1200');"></div>
+                <div class="hero-glow absolute -top-40 -right-40 w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl"></div>
+                <div class="hero-glow absolute -bottom-40 -left-40 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" style="animation-delay:-4s"></div>
                 
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-7 text-center lg:text-left space-y-6 animate__animated animate__fadeInLeft">
-                        <span class="inline-flex items-center gap-1.5 bg-emerald-500/20 text-emerald-300 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-14 items-center">
+                    <div class="md:col-span-6 lg:col-span-7 text-center md:text-left space-y-6">
+                        <span class="intro-item inline-flex items-center gap-1.5 bg-emerald-500/20 text-emerald-300 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
                             <i data-lucide="leaf" class="w-3.5 h-3.5"></i> 100% Fresco e Selecionado
                         </span>
-                        <h1 class="serif-title text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        <h1 class="intro-item intro-delay-1 serif-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-tight">
                             O verdadeiro sabor da <span class="text-emerald-400">roça</span> na mesa da sua família.
                         </h1>
-                        <p class="text-stone-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        <p class="intro-item intro-delay-2 text-stone-300 text-base sm:text-lg max-w-xl mx-auto md:mx-0 font-light leading-relaxed">
                             Frutas maduras, legumes crocantes e verduras higienizadas colhidas com carinho. Qualidade incomparável bem no coração da Posse, Petrópolis.
                         </p>
-                        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                            <button onclick="showTab('produtos')" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-stone-950 font-bold px-8 py-4 rounded-2xl shadow-xl shadow-emerald-500/20 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                                Ver Produtos <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        <div class="intro-item intro-delay-3 pt-2 flex flex-col lg:flex-row items-center justify-center md:justify-start gap-3">
+                            <button onclick="showTab('produtos')" class="button-shine w-full sm:w-auto bg-emerald-400 hover:bg-emerald-300 text-stone-950 font-bold px-8 py-4 rounded-2xl shadow-xl shadow-emerald-500/20 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                                Explorar produtos <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                             </button>
-                            <button onclick="showTab('promocoes')" class="w-full sm:w-auto bg-white/10 hover:bg-white/10 text-orange-400 border border-orange-500/30 hover:border-orange-500/60 font-semibold px-8 py-4 rounded-2xl transition-all flex items-center justify-center gap-2">
+                            <button onclick="showTab('promocoes')" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-orange-300 border border-orange-300/20 hover:border-orange-300/50 font-semibold px-8 py-4 rounded-2xl transition-all flex items-center justify-center gap-2">
                                 <i data-lucide="tag" class="w-5 h-5 text-orange-400"></i> Conferir Promoções
                             </button>
+                        </div>
+                        <div class="intro-item intro-delay-4 flex items-center justify-center lg:justify-start gap-2 pt-2 text-xs text-emerald-100/70">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-emerald-300"></i>
+                            <span>Na Posse, Petrópolis</span><span class="text-emerald-100/30">•</span><span>Peça pelo WhatsApp</span>
+                        </div>
+                    </div>
+                    <div class="hero-photo relative md:col-span-6 lg:col-span-5 max-w-xl mx-auto w-full">
+                        <div class="hero-glow absolute -inset-6 rounded-[2.5rem] bg-emerald-400/15 blur-3xl"></div>
+                        <div class="relative p-2 rounded-[2rem] bg-white/5 backdrop-blur-sm">
+                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=85&w=1000" alt="Banca colorida com frutas e verduras frescas" fetchpriority="high" class="w-full h-[290px] sm:h-[390px] lg:h-[500px] object-cover rounded-[1.55rem]">
+                            <div class="absolute inset-2 rounded-[1.55rem] bg-gradient-to-t from-[#07110e]/65 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="hero-sticker absolute -left-3 sm:-left-5 top-6 sm:top-10 flex items-center gap-2 rounded-2xl border-4 border-[#0b1c13] bg-emerald-300 px-3.5 py-3 text-emerald-950 shadow-xl">
+                                <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                <div><span class="block text-[10px] font-bold uppercase tracking-widest">Da estação</span><strong class="text-sm">Mais frescor</strong></div>
+                            </div>
+                            <div class="rating-float absolute -bottom-4 right-3 sm:-right-5 flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-xl">
+                                <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-400/15 text-amber-300"><i data-lucide="star" class="w-5 h-5 fill-current"></i></div>
+                                <div><strong class="block text-lg leading-tight">4,7 <span class="text-amber-300">★</span></strong><small class="text-xs">31 avaliações no Google</small></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -197,27 +591,66 @@
             <!-- Mini Vantagens -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
                 <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl shadow-stone-200/60 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 border border-stone-100">
-                    <div class="flex gap-4 items-start p-2">
+                    <div class="reveal-on-scroll flex gap-4 items-start p-2">
                         <div class="bg-emerald-50 p-3.5 rounded-2xl text-emerald-600 shrink-0"><i data-lucide="truck" class="w-6 h-6"></i></div>
                         <div>
                             <h3 class="font-bold text-stone-900 text-base">Sempre Fresquinhos</h3>
                             <p class="text-stone-500 text-sm mt-1">Reposição diária garantindo alimentos suculentos e cheios de nutrientes.</p>
                         </div>
                     </div>
-                    <div class="flex gap-4 items-start p-2 border-t md:border-t-0 md:border-x border-stone-100 md:px-8">
+                    <div class="reveal-on-scroll flex gap-4 items-start p-2 border-t md:border-t-0 md:border-x border-stone-100 md:px-8">
                         <div class="bg-orange-50 p-3.5 rounded-2xl text-orange-600 shrink-0"><i data-lucide="star" class="w-6 h-6"></i></div>
                         <div>
                             <h3 class="font-bold text-stone-900 text-base">Qualidade 4,7 Estrelas</h3>
                             <p class="text-stone-500 text-sm mt-1">Aprovado e elogiado por nossa comunidade local na Posse.</p>
                         </div>
                     </div>
-                    <div class="flex gap-4 items-start p-2 border-t md:border-t-0 border-stone-100">
+                    <div class="reveal-on-scroll flex gap-4 items-start p-2 border-t md:border-t-0 border-stone-100">
                         <div class="bg-amber-50 p-3.5 rounded-2xl text-amber-700 shrink-0"><i data-lucide="badge-percent" class="w-6 h-6"></i></div>
                         <div>
                             <h3 class="font-bold text-stone-900 text-base">Preço Justo de Verdade</h3>
                             <p class="text-stone-500 text-sm mt-1">Economia real em frutas e legumes selecionados sem intermediários.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Categorias em destaque -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7">
+                    <div class="space-y-2">
+                        <span class="text-xs uppercase font-bold tracking-widest text-emerald-600">Encontre o que procura</span>
+                        <h2 class="serif-title text-3xl sm:text-4xl font-bold text-stone-900">Fresquinho para cada dia</h2>
+                    </div>
+                    <button onclick="showTab('produtos')" class="self-start sm:self-auto inline-flex items-center gap-2 text-sm font-bold text-emerald-600 hover:text-emerald-400 transition-colors">
+                        Ver todas as opções <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
+                    <button onclick="showTab('produtos'); filterProducts('frutas')" class="category-card reveal-on-scroll group relative h-52 sm:h-60 overflow-hidden rounded-3xl bg-emerald-950 text-left">
+                        <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&q=80&w=700" alt="Frutas frescas e coloridas" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
+                        <span class="absolute inset-0 bg-gradient-to-t from-[#07110e]/90 via-[#07110e]/15 to-transparent"></span>
+                        <span class="absolute bottom-5 left-5 right-5 flex items-end justify-between text-white">
+                            <span><strong class="block text-xl font-bold">Frutas</strong><small class="mt-1 block text-white/75">Cores, sabor e frescor</small></span>
+                            <span class="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-white/10 backdrop-blur"><i data-lucide="arrow-up-right" class="h-5 w-5"></i></span>
+                        </span>
+                    </button>
+                    <button onclick="showTab('produtos'); filterProducts('legumes')" class="category-card reveal-on-scroll group relative h-52 sm:h-60 overflow-hidden rounded-3xl bg-emerald-950 text-left">
+                        <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&q=80&w=700" alt="Legumes frescos selecionados" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
+                        <span class="absolute inset-0 bg-gradient-to-t from-[#07110e]/90 via-[#07110e]/15 to-transparent"></span>
+                        <span class="absolute bottom-5 left-5 right-5 flex items-end justify-between text-white">
+                            <span><strong class="block text-xl font-bold">Legumes</strong><small class="mt-1 block text-white/75">Para sua cozinha de todo dia</small></span>
+                            <span class="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-white/10 backdrop-blur"><i data-lucide="arrow-up-right" class="h-5 w-5"></i></span>
+                        </span>
+                    </button>
+                    <button onclick="showTab('produtos'); filterProducts('verduras')" class="category-card reveal-on-scroll group relative h-52 sm:h-60 overflow-hidden rounded-3xl bg-emerald-950 text-left">
+                        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=700" alt="Verduras verdes e frescas" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
+                        <span class="absolute inset-0 bg-gradient-to-t from-[#07110e]/90 via-[#07110e]/15 to-transparent"></span>
+                        <span class="absolute bottom-5 left-5 right-5 flex items-end justify-between text-white">
+                            <span><strong class="block text-xl font-bold">Verduras</strong><small class="mt-1 block text-white/75">Leveza e variedade</small></span>
+                            <span class="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-white/10 backdrop-blur"><i data-lucide="arrow-up-right" class="h-5 w-5"></i></span>
+                        </span>
+                    </button>
                 </div>
             </div>
 
@@ -234,15 +667,50 @@
                 </div>
 
                 <div class="text-center mt-10">
-                    <button onclick="showTab('produtos')" class="inline-flex items-center gap-2 bg-stone-900 hover:bg-stone-800 text-white font-semibold px-6 py-3.5 rounded-xl transition-all shadow-md">
+                    <button onclick="showTab('produtos')" class="button-shine inline-flex items-center gap-2 bg-stone-900 hover:bg-stone-800 text-white font-semibold px-6 py-3.5 rounded-xl transition-all shadow-md">
                         Ver Catálogo Completo <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
             </div>
+
+            <!-- Como funciona -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+                <section class="journey-section rounded-[2rem] px-5 py-10 sm:p-10 lg:p-14">
+                    <div class="max-w-2xl mb-9">
+                        <span class="text-xs uppercase font-bold tracking-widest text-emerald-300">Sua feira sem complicação</span>
+                        <h2 class="serif-title mt-3 text-3xl sm:text-4xl font-bold text-white">Escolha. Monte. Peça.</h2>
+                        <p class="mt-3 text-sm sm:text-base text-emerald-50/65">Encontre seus produtos favoritos e envie sua lista direto para a equipe pelo WhatsApp.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="journey-step reveal-on-scroll"><span class="journey-number">01</span><h3 class="text-lg font-bold text-white">Explore o catálogo</h3><p class="mt-2 text-sm leading-relaxed text-emerald-50/60">Navegue pelas frutas, legumes, verduras e ofertas disponíveis.</p></div>
+                        <div class="journey-step reveal-on-scroll"><span class="journey-number">02</span><h3 class="text-lg font-bold text-white">Monte sua feira</h3><p class="mt-2 text-sm leading-relaxed text-emerald-50/60">Adicione os itens ao carrinho e confira seu pedido antes de enviar.</p></div>
+                        <div class="journey-step reveal-on-scroll"><span class="journey-number">03</span><h3 class="text-lg font-bold text-white">Finalize pelo WhatsApp</h3><p class="mt-2 text-sm leading-relaxed text-emerald-50/60">Envie sua lista para combinar os detalhes diretamente com a loja.</p></div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- CTA final -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+                <section class="closing-cta rounded-[2rem] px-6 py-10 sm:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-7">
+                    <div class="relative z-10 max-w-2xl">
+                        <span class="text-xs uppercase font-bold tracking-widest text-emerald-300">Um pedacinho da roça por perto</span>
+                        <h2 class="serif-title mt-3 text-3xl sm:text-4xl font-bold text-white">Sua próxima feira começa aqui.</h2>
+                        <p class="mt-3 text-sm sm:text-base text-emerald-50/65">Escolha seus produtos e fale com o Hortifruti D'Roça pelo WhatsApp.</p>
+                    </div>
+                    <div class="relative z-10 flex flex-col sm:flex-row gap-3">
+                        <button onclick="showTab('produtos')" class="button-shine inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-300 px-6 py-4 font-bold text-emerald-950 transition-all hover:-translate-y-1 hover:bg-emerald-200">
+                            Explorar catálogo <i data-lucide="arrow-right" class="h-5 w-5"></i>
+                        </button>
+                        <a href="https://wa.me/5524999097508" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-emerald-100/20 bg-white/5 px-6 py-4 font-semibold text-emerald-50 transition-all hover:bg-white/10">
+                            <i data-lucide="message-circle" class="h-5 w-5 text-emerald-300"></i> WhatsApp
+                        </a>
+                    </div>
+                </section>
+            </div>
         </section>
 
         <!-- SEÇÃO: PRODUTOS (CATÁLOGO COMPLETO) -->
-        <section id="tab-produtos" class="tab-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate__animated animate__fadeIn">
+        <section id="tab-produtos" class="tab-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-stone-100">
                 <div class="space-y-2">
                     <h2 class="serif-title text-3xl sm:text-4xl font-bold text-stone-900">Nosso Catálogo Completo</h2>
@@ -264,7 +732,7 @@
         </section>
 
         <!-- SEÇÃO: PROMOÇÕES -->
-        <section id="tab-promocoes" class="tab-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate__animated animate__fadeIn">
+        <section id="tab-promocoes" class="tab-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="bg-gradient-to-r from-orange-500 to-amber-500 rounded-3xl p-8 sm:p-12 text-white mb-12 shadow-xl shadow-orange-500/10 relative overflow-hidden">
                 <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-white/10 rounded-full blur-xl"></div>
                 <div class="relative z-10 max-w-xl space-y-4">
@@ -281,7 +749,7 @@
         </section>
 
         <!-- SEÇÃO: SOBRE NÓS -->
-        <section id="tab-sobre" class="tab-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 animate__animated animate__fadeIn">
+        <section id="tab-sobre" class="tab-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
                     <span class="text-xs uppercase font-bold tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Nossa História</span>
@@ -396,7 +864,7 @@
         </section>
 
         <!-- SEÇÃO: CONTATO -->
-        <section id="tab-contato" class="tab-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate__animated animate__fadeIn">
+        <section id="tab-contato" class="tab-content hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
                 <!-- Informações e Cards -->
                 <div class="lg:col-span-5 space-y-6">
@@ -1210,6 +1678,25 @@
             }
         } catch (e) {}
         let currentCategory = 'todos';
+        const revealObserver = 'IntersectionObserver' in window
+            ? new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' })
+            : null;
+
+        function initScrollReveals(root = document) {
+            const revealItems = root.querySelectorAll('.reveal-on-scroll:not([data-reveal-ready])');
+            revealItems.forEach(item => {
+                item.dataset.revealReady = 'true';
+                if (revealObserver) revealObserver.observe(item);
+                else item.classList.add('is-visible');
+            });
+        }
 
         // Função para Renderizar os Cards de Produtos com Efeitos Visuais Lindos
         function createProductCard(product) {
@@ -1217,7 +1704,7 @@
             const currentPrice = hasPromo ? product.promoPrice : product.price;
             
             return `
-                <div class="bg-white rounded-2xl overflow-hidden border border-stone-100 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col card-product group animate__animated animate__fadeInUp">
+                <div class="bg-white rounded-2xl overflow-hidden border border-stone-100 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col card-product group reveal-on-scroll">
                     <div class="relative overflow-hidden aspect-square bg-stone-100">
                         ${hasPromo ? `<span class="absolute top-3 left-3 bg-orange-500 text-white font-black text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-lg z-10 shadow-sm">${product.tag}</span>` : ''}
                         <img src="${product.img}" alt="${product.name}" class="w-full h-full object-cover img-zoom" loading="lazy">
@@ -1262,6 +1749,7 @@
 
             // Recarregar os ícones do Lucide para os elementos injetados via JS
             lucide.createIcons();
+            initScrollReveals();
         }
 
         // Filtro Dinâmico da Aba de Produtos
@@ -1286,6 +1774,10 @@
             const activeContent = document.getElementById(`tab-${tabId}`);
             if (activeContent) {
                 activeContent.classList.replace('hidden', 'block');
+                activeContent.classList.remove('tab-enter');
+                void activeContent.offsetWidth;
+                activeContent.classList.add('tab-enter');
+                initScrollReveals(activeContent);
             }
 
             // Atualizar Estados dos Botões do Menu Desktop
@@ -1301,6 +1793,13 @@
                 } else {
                     activeBtn.className = "nav-btn px-4 py-2 rounded-xl text-sm font-medium text-emerald-600 bg-emerald-50/60 transition-all";
                 }
+            }
+
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                document.getElementById('menu-icon').setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
             }
 
             // Jogar a página para o topo suavemente ao mudar de aba
@@ -1344,6 +1843,7 @@ ${msg}`);
         window.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
             initGrids();
+            initScrollReveals();
         });
     </script>
 </body>

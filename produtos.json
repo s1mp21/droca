@@ -199,15 +199,6 @@
       "price": 2.49,
       "promo": false,
       "img": "https://edge.osuper.com.br/458LJa2_Xdhr4kPxUMI0HMStWHQ=/1600x0/smart/https://osuper-ecommerce-beltrame.s3.sa-east-1.amazonaws.com/a3def5bc-257513featured.jpg"
-    },
-    {
-      "id": 1793396954205,
-      "name": "Las",
-      "category": "frutas",
-      "unit": "Unidade",
-      "price": 3684,
-      "promo": false,
-      "img": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=400"
     }
   ]
 }
